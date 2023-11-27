@@ -1,0 +1,88 @@
+/* ALGORITHM lenght_words
+VAR
+    word : STRING;
+    i : INTEGER := 0;
+BEGIN
+    read(word );
+    WHILE (word[i] <> ".") DO
+        i++;
+    END_WHILE
+
+    write(i)
+END */
+
+/* ALGORITHM lenght_sentences
+VAR
+    sentence : STRING;
+    i : INTEGER := 0;
+    nbr_car : INTEGER :=0;
+
+BEGIN
+
+    read(sentence);
+
+   WHILE (sentence[i] <> ".") DO
+
+    IF (sentence[i] <> " ") THEN
+
+        nbr_car = nbr_car + 1;
+    
+    END_IF
+
+    i++;
+    
+   END_WHILE
+
+    write(le nombre de caractère différent de espace est de : i);
+END */
+
+
+ALGORITHM sentence_vowels
+VAR
+    nbr_car_vowels = INTEGER :=0;
+    i : INTEGER := 0;
+    sentences :STRING;
+BEGIN
+write( saisir la phrase : );
+read (sentences);
+
+WHILE (sentences[i] <> ".") DO
+    IF (sentences[i] ="a"||sentences[i] ="u"||sentences[i] ="o"||sentences[i] ="e"||sentences[i] ="i") THEN
+    nbr_car_vowels++;
+    END_IF
+    i++;
+END_WHILE
+write ( le nombre de voyelle est de : nbr_car_vowels );
+END
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
