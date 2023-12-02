@@ -1,0 +1,17 @@
+PROCEDURE add_num(VAR num:INTEGER)
+BEGIN
+    num := num+1
+    Write(num) // will display  21
+END
+ALGORITHM test_by_value
+VAR
+    myData : INTEGER := 20;
+BEGIN
+   // display the variable
+   Write(myData); // will display 20
+   // call the procedure add_num
+   add_num(myData); // now the variable num will point at
+   //the same memory allocation of myData variable so any changes of num will affect myData
+   // display the variable again
+   Write(myData) // will display 21
+END

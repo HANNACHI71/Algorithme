@@ -1,0 +1,27 @@
+FUNCTION DotProduct(v1, v2)
+VAR
+    n := length(v1);
+    ps := 0;
+BEGIN 
+    FOR i FROM 0 TO n-1 DO
+        ps := ps + v1[i] * v2[i]
+    END_FOR 
+    RETURN ps;
+END_FUNCTION
+
+Algorithm Check_Orthogonality
+VAR
+i,j :INTEGER;
+
+BEGIN
+    FOR i FROM 0 TO n-1 DO
+        FOR j FROM i+1 TO n-1 DO
+            dp := DotProduct(vectors[i], vectors[j])
+            IF dp = 0 THEN
+                Write("Vectors ", i+1, " and ", j+1, " are orthogonal.")
+            ELSE
+                Write("Vectors ", i+1, " and ", j+1, " are not orthogonal.")
+            END_IF
+        END_FOR
+    END_FOR
+END

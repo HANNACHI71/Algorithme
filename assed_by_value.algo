@@ -1,0 +1,18 @@
+PROCEDURE add_num(num:INTEGER) // num is the local variable for the procedure
+
+BEGIN
+    num := num+1
+    Write(num) // will display  21
+END
+ALGORITHM test_by_value
+VAR
+    myData : INTEGER := 20;
+
+BEGIN
+   // display the variable
+   Write(myData); // will display 20
+   // call the procedure add_num
+   add_num(myData); // Calling the proc add_num with myData as a parameter              
+   // display the variable again
+   Write(myData) // will display 20
+END

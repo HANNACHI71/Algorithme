@@ -1,0 +1,36 @@
+/*Clarity of the algorithme
+a more readable algorithme
+ease maintenance
+reuse of sub-algorithme*/
+
+ALGORITHM array_sum_two_element
+
+VAR
+
+    tab : ARRAY_OF INTEGER[50];
+    i,n : INTEGER;
+
+BEGIN
+    //Read size of elements
+
+    Read(n);
+
+    // Read elements
+    /* -----------------------------------------------Sub algorithme reading elements of array---------------------------------*/
+    FOR i FROM 0 TO n-1 STEP 1  DO
+    Read(tab[i]);
+    END_FOR
+
+    // add successive elements
+    /* -----------------------------------------------Sub algorithme add elements ---------------------------------------------*/
+    FOR i FROM 0 TO n-2 STEP 1  DO
+        tab[i] := tab[i]+tab[i+1];
+    END_FOR
+
+    //dispaly array
+    /* -----------------------------------------------Sub algorithme displaying elements of array---------------------------------*/
+    FOR i FROM 0 TO n-1 STEP 1  DO
+        Write(tab[i]);
+    END_FOR
+
+END

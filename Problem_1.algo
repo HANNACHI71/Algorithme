@@ -1,0 +1,41 @@
+AlgorithmFind_Distinc_tSum
+VAR
+    Set1 ,Set2: ARRAY_OF INTEGER[4]; // declaring the array and define its length.
+    sum : INTEGER:= 0;
+    n1,n2 : INTEGER;
+    found : BOOLEAN;
+    i,j :INTEGER;
+BEGIN   
+    Set1 : [3, 1, 7, 9]; //insert the elements directly in array
+    Set2: [2, 4, 1, 9, 3]; //insert the elements directly in array
+    n1 := length(set1);
+    n2 := length(set2);
+
+    FOR i FROM 0 TO n1-1 DO
+        found := false;
+        FOR j FROM 0 TO n2-1 DO
+            IF set1[i] = set2[j] THEN
+                found := true
+                BREAK;
+            END_IF
+        END_FOR
+        IF (NOT found) THEN
+            sum := sum + set1[i] // somme des elements distioncts table set1
+        END_IF
+    END_FOR
+    n2 := length(set2)  
+    FOR i FROM 0 to n2-1 DO
+        found := false;
+        FOR j FROM 0 TO n1-1 DO
+            IF set2[i] = set1[j] THEN
+                found := true
+                BREAK;
+            END_IF
+        END_FOR
+        if (NOT found) then:
+            sum := sum + set2[i] // somme des elements distioncts table set2
+        END_IF
+    END_FOR
+    
+    Write(sum)
+END
