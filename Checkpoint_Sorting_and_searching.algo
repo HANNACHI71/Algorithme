@@ -1,0 +1,26 @@
+PROCEDURE insertion_sort(VAR arr : ARRAY_OF INTEGER):
+VAR
+    i,j,current_element : INTEGER;
+
+BEGIN
+    // Itérer sur chaque élément en commençant par le deuxième
+    FOR i FROM 1 TO arr.length-1 DO:
+
+        // Sélectionnez l'élément actuel à insérer dans la séquence triée
+        current_element := arr[i]
+
+        // Initialisez un pointeur sur l'élément juste avant l'élément actuel
+        j := i - 1
+
+        // Déplacez les éléments plus grands que l'élément actuel d'une position vers l'avant par rapport à leur position actuelle
+
+        while (j >= 0 and arr[j] > current_element) do:
+            arr[j + 1] := arr[j]
+            j := j - 1
+
+        // Insérez l'élément actuel à sa position correcte dans la séquence triée
+
+        arr[j + 1] := current_element
+
+    END FOR
+END

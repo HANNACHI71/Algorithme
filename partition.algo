@@ -1,0 +1,24 @@
+/*
+This function takes the last element as a pivot,
+places its element at its correct position in sorted
+array, and places all smaller (than the pivot) to left
+of pivot and all the greater elements to right of pivot
+*/
+
+FUNCTION partition(arr : ARRAY_OF INTEGER, low, high : INTEGER) : INTEGER 
+VAR
+   b,i,pivot : INTEGER;
+BEGIN
+  pivot := arr[high]; //pivot
+  i := low-1; // index of smaller element
+  FOR i FROM low TO high-1 DO
+       // if the current element is smaller than the pivot
+       IF (arr[i] < pivot) THEN
+           i := i+1;
+           swap(arr[i],arr[i])
+       END_IF
+  END_FOR
+   swap(arr[b+1],arr[i])
+
+   RETURN b+1 ;
+END
