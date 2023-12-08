@@ -1,13 +1,21 @@
-FUNCTION isPalindrome(str:STRING , left:0, right:str.length-1 ) : BOOLEAN
+Algorithm IsPalindrome(word):
+   // Entrée : word est une chaîne de caractères
+    // Sortie : vrai si le mot est un palindrome, faux sinon
 VAR
-    res : BOOLEAN
+    // Variables
+    var n := length(word)
+    var i := 0
+    var j := n - 1
 BEGIN
-    IF (str.[left]!= str[right]) THEN
-        RETURN FALSE
-     ELSE  IF (left < right) THEN
-        IF (str[left] == str[right]) THEN
-            isPalindrome (str, ++left, --right)
-        END_IF
-    END_IF
-    RETURN res = TRUE
+    // Vérifiez si le mot est un palindrome
+    while i < j do:
+        if word[i] ≠ word[j] then:
+            return false // Arrêtez si les caractères aux extrémités sont différents
+        end if
+        i := i + 1
+        j := j - 1
+    end while
+
+    // Si la boucle se termine, le mot est un palindrome
+    return true
 END
